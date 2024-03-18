@@ -1,7 +1,7 @@
 {
   "Paths": {
-    "parent_dir": "C:/Users/teodo/PycharmProjects/BeePopulations",
-    "img_dir": "C:/Users/teodo/PycharmProjects/BeePopulations/bee_imgs/bee_imgs/",
-    "csv_dir": "C:/Users/teodo/PycharmProjects/BeePopulations/bee_data.csv"
+    "PARENT_DIR": "C:/Users/teodo/PycharmProjects/pythonProject1",
+    "IMG_DIR": "{PARENT_DIR}/bee_imgs/bee_imgs/",
+    "CSV_DIR": "{PARENT_DIR}/bee_data.csv"
   }
 }

@@ -10,9 +10,13 @@ from matplotlib import pyplot as plt
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
-PARENT_DIR = "C:/Users/teodo/PycharmProjects/pythonProject1"
-IMG_DIR = f"{PARENT_DIR}/bee_imgs/bee_imgs/"
-CSV_DIR = f"{PARENT_DIR}/bee_data.csv"
+with open('config.json') as f:
+    config = json.load(f)
+
+PARENT_DIR = config['Paths']['PARENT_DIR']
+IMG_DIR = config['Paths']['IMG_DIR'].format(PARENT_DIR=PARENT_DIR)
+CSV_DIR = config['Paths']['CSV_DIR'].format(PARENT_DIR=PARENT_DIR)
+
 epochs = 50
 df = pd.read_csv(CSV_DIR)
 
@@ -124,6 +128,7 @@ history2 = model2.fit_generator(datagen.flow(np.array(X_train), np.array(y_train
 
 model_plot(history1, title="Model 1")
 model_plot(history2, title="Model 2 with Augmentation")
+
 
 def multi_pred(models, X_test, y_test):
     preds = [model.predict(np.array(X_test)) for model in models]
